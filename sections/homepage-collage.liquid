@@ -28,7 +28,7 @@
         <div class="second-block__text">
           {{ section.settings.info }}
         </div>
-        {% render 'button-cta', url: {{section.settings.button_url}}, title: {{section.settings.button}} %}
+        {% render 'button-cta', url: section.settings.button_url, title: section.settings.button %}
       </div>
     </div>
   </div>
@@ -81,3 +81,15 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'button-cta', url: {{section.settings.button_url}}, title: {{section.settings.button}}
+    %}"
+  to: "{% render 'button-cta', url: section.settings.button_url, title: section.settings.button
+    %}"
+  position: 1014..1105
+{% endcomment %}

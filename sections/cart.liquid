@@ -25,12 +25,7 @@
   </div>
   <div class="side-cart__empty">
     <p class="empty-title">Your Cart is Empty</p>
-    {%
-      render 'button-primary',
-      url: {{section.settings.link_best_sellers}},
-      title: {{section.settings.btn_sellers}},
-      btnType: 'light'
-    %}
+    {% render 'button-primary', url: section.settings.link_best_sellers, title: section.settings.btn_sellers, btnType: 'light' %}
   </div>
 </form>
 <div class="overlay"></div>
@@ -69,3 +64,20 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+          render 'button-primary',
+          url: {{section.settings.link_best_sellers}},
+          title: {{section.settings.btn_sellers}},
+          btnType: 'light'
+        %}
+  to: "{% render 'button-primary', url: section.settings.link_best_sellers, title:
+    section.settings.btn_sellers, btnType: 'light' %}"
+  position: 1050..1175
+{% endcomment %}

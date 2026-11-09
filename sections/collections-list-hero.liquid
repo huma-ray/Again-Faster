@@ -4,7 +4,7 @@
     <div class="collection-hero__content">
       <h5 class="heading-text heading-5">{{ collection.metafields.accentuate.eyebrow }}</h5>
       <h2 class="heading-text heading-2">{{ collection.metafields.accentuate.title }}</h1>
-      {% render 'button-secondary', url: {{collection.metafields.accentuate.cta_url}}, title: {{collection.metafields.accentuate.cta_label}} %}
+      {% render 'button-secondary', url: collection.metafields.accentuate.cta_url, title: collection.metafields.accentuate.cta_label %}
     </div>
     <div class="collection-hero__banner">
       <div class="collection-hero__image collection-hero__image--1">
@@ -20,3 +20,15 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'button-secondary', url: {{collection.metafields.accentuate.cta_url}},
+    title: {{collection.metafields.accentuate.cta_label}} %}"
+  to: "{% render 'button-secondary', url: collection.metafields.accentuate.cta_url,
+    title: collection.metafields.accentuate.cta_label %}"
+  position: 352..481
+{% endcomment %}
