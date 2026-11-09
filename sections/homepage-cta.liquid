@@ -4,7 +4,7 @@
     <div class="homepage-cta__content">
       <h2 class="heading-text heading-2 heading-2--light">{{ section.settings.title }}</h2>
       <p class="homepage-cta__text">{{ section.settings.info }}</p>
-      {% render 'button-secondary', btnType: 'light', url: {{section.settings.button_url}}, title: {{section.settings.button}} %}
+      {% render 'button-secondary', btnType: 'light', url: section.settings.button_url, title: section.settings.button %}
     </div>
   </div>
 </div>
@@ -55,3 +55,15 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'button-secondary', btnType: 'light', url: {{section.settings.button_url}},
+    title: {{section.settings.button}} %}"
+  to: "{% render 'button-secondary', btnType: 'light', url: section.settings.button_url,
+    title: section.settings.button %}"
+  position: 336..451
+{% endcomment %}

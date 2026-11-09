@@ -6,12 +6,7 @@
       <h1 class="heading-text heading-1 heading-1--light">{{ section.settings.hero_title }}</h1>
       {%- comment -%} <p class="homepage-hero__text">{{ section.settings.hero_text }}</p> {%- endcomment -%}
       <p class="homepage-hero__text">{{ section.settings.hero_text }}</p>
-      {%
-        render 'button-secondary',
-        btnType: 'light',
-        url: {{section.settings.hero_cta_url}},
-        title: {{section.settings.hero_cta_label}}
-      %}
+      {% render 'button-secondary', btnType: 'light', url: section.settings.hero_cta_url, title: section.settings.hero_cta_label %}
     </div>
   </div>
 </div>
@@ -57,3 +52,20 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+            render 'button-secondary',
+            btnType: 'light',
+            url: {{section.settings.hero_cta_url}},
+            title: {{section.settings.hero_cta_label}}
+          %}
+  to: "{% render 'button-secondary', btnType: 'light', url: section.settings.hero_cta_url,
+    title: section.settings.hero_cta_label %}"
+  position: 443..568
+{% endcomment %}
